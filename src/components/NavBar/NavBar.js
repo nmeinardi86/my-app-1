@@ -6,7 +6,7 @@ function NavBar (){
  return <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Panaderia los inmortales</a>
+          <a className="navbar-brand" href="#navbar">Panaderia los inmortales</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
             <span className="navbar-toggler-icon"></span>
           </button>

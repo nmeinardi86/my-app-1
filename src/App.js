@@ -10,10 +10,11 @@ function App() {
   integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
   crossOrigin="anonymous"
   />
+  
    <NavBar />
    <div>Prueba</div>
    
-  
+   
   </>;
 }
 export default App;
