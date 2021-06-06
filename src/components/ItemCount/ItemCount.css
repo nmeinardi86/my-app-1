@@ -1,0 +1,14 @@
+.itemcountcount{
+    display: flex;
+    align-items: center;
+    margin: 0px 61px;
+}
+
+.itemCountContainer{
+    width: 200px;
+}
+
+.btn{
+    width: 100%;
+    background-color: aliceblue;
+}

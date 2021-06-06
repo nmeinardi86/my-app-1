@@ -1,9 +1,16 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+import ItemCount from './components/ItemCount/ItemCount.js';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
+
+ const onAdd = (amount) => {
+   console.log(amount);
+ }
+
+
  return <>
       <link
   rel="stylesheet"
@@ -19,6 +26,7 @@ function App() {
    
    <ItemListContainer greetings="Mensaje para la itemlistcontainer" />
    
+   <ItemCount initial={1} stock={5} onAdd={onAdd}  />
   </>;
 }
 export default App;
