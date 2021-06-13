@@ -1,11 +1,14 @@
 import '../../App.css';
-
+import ItemList from '../ItemList/ItemList.js';
 
 function ItemListContainer(props){
 
     return <>
-     <div>Este va a ser mi catalogo esta es la propiedad {props.greetings}</div>
+     
+     <ItemList item="item" />
+
     </>;
+
 }
 
 export default ItemListContainer;

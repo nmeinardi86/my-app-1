@@ -42,6 +42,23 @@
   
 }
 
+.card{
+  width: 18rem;
+  margin:5px;
+  border-radius: 10px;
+}
+
+.Items{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+h2{
+  text-align: center;
+  margin: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

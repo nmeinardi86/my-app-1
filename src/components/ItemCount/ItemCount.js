@@ -24,13 +24,13 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
     return <>
         <div className="itemCountContainer">
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <div className="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-light" onClick={removeItem}>-</button>
                 <div className="itemcountcount">{items}</div>
-                <button  type="button" class="btn btn-light" onClick={addItem}>+</button>
+                <button  type="button" className="btn btn-light" onClick={addItem}>+</button>
             </div>
             <div className="btncontainer">
-                <button  type="button" class="btn btn-light" onClick={HandleAlert}>Agregar Items</button>
+                <button  type="button" className="btn btn-light" onClick={HandleAlert}>Agregar Items</button>
             </div>
             
         </div>
