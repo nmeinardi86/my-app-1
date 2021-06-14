@@ -1,25 +1,26 @@
+import { useState, useEffect } from 'react';
 import '../../App.css';
 import ItemCount from '../ItemCount/ItemCount.js';
-import images from '../../components/ItemList/prod1.png'
 
 
-let ItemList = [{id:1, 
+
+var ItemList = [{id:1, 
                 title:"prod 1",
                 description:"producto para..",
                 price:100,
-                pictureURL : '"../ItemList/prod1.png"',
+                pictureURL : '../../../public/assets/prod1.png',
                 stock: 5 },
                 {id:2, 
                 title:"prod 2",
                 description:"producto para..",
                 price:100,
-                pictureURL : '../ItemList/prod1.png',
+                pictureURL : '../../../public/assets/prod1.png',
                 stock: 5 },
                 {id:3, 
                 title:"prod ",
                 description:"producto para..",
                 price:200,
-                pictureURL : '../ItemList/prod1.png',
+                pictureURL : '../../../public/assets/prod1.png',
                 stock: 6 }];
 
 
@@ -29,22 +30,22 @@ let ItemList = [{id:1,
                 
 function Item(props){           
 
-    const task = new Promise((resolve, reject) => {
-        console.log('Buscando productos...');
-      
-        setTimeout(() => {
-          resolve(ItemList);
-          
-        }, 3000);
-      });
-      
-      task.then(res => {
-        console.log(res);
-        return (<> 
-            <div className="Items">
-                    {res.map(I => 
+const [Items , setItems] = useState(0);
+
+  useEffect(() => {
+   new Promise((result, reject) => {
+      setTimeout(() => {
+        result(ItemList)
+      }, 2000);
+    } ).then((response) => setItems(response));
+  }, []); 
+  
+  console.log(Items);
+
+      return (<> <div className="Items">
+                    {Items.map(I => 
                         <div  key={I.id} className="card" >
-                            <img src={images} className="card-img-top" alt="..."/>
+                            <img src={I.pic} className="card-img-top" alt="..."/>
                             <div className="card-body">
                                 <h5 className="card-title">{I.title}</h5>
                                 <p className="card-text">{I.description}</p>
@@ -53,13 +54,11 @@ function Item(props){
                             </div>
                         </div>
                         )
-                     };
-            </div>
-        </>);
-        })
-        .catch(e => {
-          console.log(e.message);
-        });
-}
+                     }
+                </div>
+        </>)
+        }
+
+
 
 export default Item;
