@@ -1,5 +1,5 @@
 import '../../App.css';
-import Item from '../Item/Item.js';
+import Item from '../item/Item.js';
 
 function ItemList(props){
     return <>
