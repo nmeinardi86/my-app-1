@@ -1,14 +1,19 @@
 import '../../App.css';
-import ItemList from '../ItemList/ItemList.js';
+import { useState, useEffect, useParams } from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail.js';
 
-function ItemListContainer(props){
+
+function ItemDetailContainer(props){
+
+    let { itemIdParam } = useParams();
+    console.log(itemIdParam);
 
     return <>
      
-     <ItemList item="item" />
+     <ItemDetail />
 
     </>;
 
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

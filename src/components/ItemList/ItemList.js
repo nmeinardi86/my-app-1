@@ -3,7 +3,7 @@ import Item from '../item/Item.js';
 
 function ItemList(props){
     return <>
-     <h2>Productos Seleccionados</h2>
+     <h2>Nuestro Productos</h2>
     
     <Item item="item" />
     </>;
