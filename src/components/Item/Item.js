@@ -35,11 +35,10 @@ const [Items , setItems] = useState(0);
 
         result(Items)
       }, 2000);
-    } ).then((response) =>    {console.log(response) ;
-                                  setItems(response)} );
+    } ).then((response) =>    { setItems(response)} );
   }, []); 
   
-
+    
 
       return (<> <div className="Items">
                   
@@ -53,7 +52,7 @@ const [Items , setItems] = useState(0);
                                 <p className="card-text">{I.description}</p>
                                 <p className="card-title">Price:{I.price} </p>
                                 <ItemCount initial={1} stock={I.stock}  />  
-                                <NavLink activeClassName="selected" to={`/ItemDetail/${I.id}`}>Ver Detalle</NavLink>
+                                <NavLink activeClassName="selected" to={`/ItemDetailContainer/${I.id}`}>Ver Detalle</NavLink>
                             </div>
                         </div>
                         )

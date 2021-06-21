@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import '../../App.css';
+import ItemCount from '../ItemCount/ItemCount.js';
 
 
 
 var ItemList = [{id:1, 
     title:"prod 1",
-    description:"producto para..",
+    description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aspernatur atque quod, hic aperiam obcaecati blanditiis incidunt a. Consectetur at excepturi, cumque veritatis voluptatem molestias soluta ipsum eos et fugiat?",
     price:100,
-    pictureURL : './assets/prod1.png',
+    pictureURL : './assets/pan.jpg',
     stock: 5 },
     {id:2, 
     title:"prod 2",
-    description:"producto para..",
+    description:"producto 2 para..",
     price:100,
     pictureURL : "./assets/prod1.png",
     stock: 5 },
     {id:3, 
-    title:"prod ",
-    description:"producto para..",
+    title:"prod 3",
+    description:"producto 3 para..",
     price:200,
     pictureURL : './assets/prod1.png',
     stock: 6 }];
@@ -28,8 +29,8 @@ function ItemDetail(props){
 
 const [Items , setItem] = useState(0);
 
-let { h } = useParams();
-console.log(h);
+let h  = useParams();
+
 
 
   useEffect(() => {
@@ -38,37 +39,35 @@ console.log(h);
 
         result(ItemList)
       }, 2000);
-    } ).then((response) =>    {console.log(response) ;
-                                  setItem(response)} );
+    } ).then((response) =>    { setItem(response)} );
   }, []); 
   
+  let articuloSeleccionado = ItemList.find(e => e.id == h.Id);
 
+  
+
+  let articuloArray = [];
+
+  
+  articuloArray.push(articuloSeleccionado);
+
+  
 
       return (<>
-                <div className="media d-flex align-self-center mr-3">
+                <div className="detail-container">
 
-                {ItemList.map(I => <div key={I.id} >
-                                    <div id="carouselExampleSlidesOnly" className="carousel slide"
-                                        data-bs-ride="carousel">
-                                        <div className="carousel-inner">
-                                            <div className="carousel-item active">
-                                                <img src={I.pictureURL} className="d-block w-100" alt="" />
-                                            </div>
-                                            <div className="carousel-item">
-                                                <img src="..." className="d-block w-100" alt="" />
-                                            </div>
-                                            <div className="carousel-item">
-                                                <img src="..." className="d-block w-100" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="">
-                                        {I.description}
-                                    </div>
-                                    <div className="">
-                                        {I.precio}
-                                    </div>  
-                                </div>) }
+                {articuloArray.map(I => <div  key={I.id} className="" >
+                            
+                            <h2>Detalle de Producto</h2>
+                            <h5 className="">{I.title}</h5>
+                            <img src={I.pictureURL} className="" alt="imagen del detalle del producto"/>
+                            
+                            <div className="">
+                            <p className="">Detalle:{I.description}</p>
+                            <p className="">Precio: ${I.price} </p>
+                                <ItemCount initial={1} stock={I.stock}  />  
+                            </div>
+                        </div>) }
 
 
             </div>

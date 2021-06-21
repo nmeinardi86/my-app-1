@@ -25,7 +25,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
     return <>
         <div className="itemCountContainer">
             <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-light" onClick={removeItem}>-</button>
+                <button type="button" className="btn btn-light" onClick={removeItem}>-</button>
                 <div className="itemcountcount">{items}</div>
                 <button  type="button" className="btn btn-light" onClick={addItem}>+</button>
             </div>
