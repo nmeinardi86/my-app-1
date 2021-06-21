@@ -1,4 +1,5 @@
-import { useState, useEffect, useParams } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import '../../App.css';
 
 
@@ -27,7 +28,8 @@ function ItemDetail(props){
 
 const [Items , setItem] = useState(0);
 
-
+let { h } = useParams();
+console.log(h);
 
 
   useEffect(() => {
