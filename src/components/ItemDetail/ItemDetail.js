@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import '../../App.css';
 import ItemCount from '../ItemCount/ItemCount.js';
+import {Link} from 'react-router-dom';
 
 
 
@@ -25,9 +26,14 @@ var ItemList = [{id:1,
     stock: 6 }];
 
 
-function ItemDetail(props){           
+function ItemDetail({item}){           
 
 const [Items , setItem] = useState(0);
+const [isClicked,setIsClicked] = useState(0);
+
+
+
+
 
 let h  = useParams();
 
@@ -51,7 +57,11 @@ let h  = useParams();
   
   articuloArray.push(articuloSeleccionado);
 
-  
+  const onAdd = (count) => {
+      console.log(count);
+      setIsClicked(true)
+  };
+
 
       return (<>
                 <div className="detail-container">
@@ -65,7 +75,11 @@ let h  = useParams();
                             <div className="">
                             <p className="">Detalle:{I.description}</p>
                             <p className="">Precio: ${I.price} </p>
-                                <ItemCount initial={1} stock={I.stock}  />  
+                            {isClicked ?  <div className="btncontainer">
+                                <Link to="/cart">   <button  type="button" className="btn btn-light">Terminar Compra</button></Link>
+                                        </div> : <ItemCount  initial={1} stock={I.stock} onAdd={onAdd}  />  
+                                }
+                                
                             </div>
                         </div>) }
 
